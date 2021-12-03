@@ -28,3 +28,27 @@ CREATE TABLE buy(
 CREATE TABLE sell(
     ID int PRIMARY KEY
 );
+
+CREATE TABLE instrument(
+    symbol varchar(10) PRIMARY KEY,
+    quote int
+)
+
+CREATE TABLE owns(
+    account_id varchar(13) REFERENCES account(account_id),
+    instrument_symbol varchar(10) REFERENCES instrument(symbol),
+    current_value bigint AS (quantity*instrument(quote)),
+    quantity int 
+);
+
+CREATE TABLE stock(
+    symbol varchar(10) PRIMARY KEY,
+);
+
+CREATE TABLE mutual_fund(
+    symbol varchar(10) PRIMARY KEY,
+);
+
+CREATE TABLE etf(
+    symbol varchar(10) PRIMARY KEY,
+);
