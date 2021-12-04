@@ -5,9 +5,11 @@ CREATE TABLE user_info(
 
 CREATE TABLE account(
     account_id varchar(13) PRIMARY KEY,
+    username varchar(20),
     cash_balance bigint,
     investment_value bigint,
     total_value bigint GENERATED ALWAYS AS (cash_balance + investment_value) STORED
+    FOREIGN KEY(username) REFERENCES user_info(username) ON DELETE SET NULL
     );
 
 
