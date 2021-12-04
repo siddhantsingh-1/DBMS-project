@@ -41,12 +41,9 @@ CREATE TABLE sell(
     ID int PRIMARY KEY
 );
 
-
-
 CREATE TABLE owns(
     account_id varchar(13) REFERENCES account(account_id),
     instrument_symbol varchar(10) REFERENCES instrument(symbol),
-    current_value bigint,
     quantity int 
 );
 
@@ -312,3 +309,104 @@ INSERT INTO trade(id,symbol,account_id,shares,price,date) VALUES (97,'JBNE','495
 INSERT INTO trade(id,symbol,account_id,shares,price,date) VALUES (98,'FFIB','101-liorh-628',9586,1338,'2021-05-08 22:06:32');
 INSERT INTO trade(id,symbol,account_id,shares,price,date) VALUES (99,'FMYM','822-sxgot-451',8243,1566,'2021-07-15 15:35:11');
 INSERT INTO trade(id,symbol,account_id,shares,price,date) VALUES (100,'IINR','597-yxndj-063',5926,305,'2021-09-27 08:23:52');
+
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('178-mjjjm-565','OEDW',1198);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('495-sgiel-831','DZFK',1524);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('597-yxndj-063','IPIV',305);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('378-gotsb-518','IMYC',7262);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('950-iuvro-338','NQIM',5322);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('467-lqpya-330','RIYO',7313);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('075-iulit-689','BTBS',1808);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('734-xfpls-018','SDKQ',6420);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('387-jyfpu-157','JBNE',6374);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('302-kkeln-490','FGNE',7360);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('594-onhzg-252','TVNZ',8510);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('871-wcxji-438','XGPG',4282);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('378-gotsb-518','WUWA',9412);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('594-onhzg-252','GBDZ',9043);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('877-jjfke-429','VMXE',2319);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('467-lqpya-330','XVDS',7238);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('264-ziidg-337','SYST',1974);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('693-iembx-947','BEGP',4273);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('898-wnuan-793','TVNZ',7411);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('960-ztqge-913','ZYHK',1732);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('822-sxgot-451','IINR',8645);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('798-nfuap-603','PPMC',3063);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('495-sgiel-831','YJAN',4626);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('429-fazic-743','JKUD',5236);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('798-nfuap-603','JBNE',1782);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('264-ziidg-337','KLJN',8497);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('101-liorh-628','KQSB',1253);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('418-ylhld-122','FBDL',9083);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('862-coqwz-635','JGJE',2574);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('871-wcxji-438','VDVV',8837);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('734-xfpls-018','TIJE',320);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('877-jjfke-429','RESX',8536);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('467-lqpya-330','EQDP',8858);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('950-iuvro-338','EGES',7991);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('178-mjjjm-565','OZMC',1448);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('960-ztqge-913','BEGP',8151);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('734-xfpls-018','NSPD',8986);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('960-ztqge-913','EZHY',9915);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('467-lqpya-330','RFWT',7843);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('418-ylhld-122','SHQN',5813);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('871-wcxji-438','NLMY',8289);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('862-coqwz-635','DZFK',2677);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('101-liorh-628','EOTW',7755);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('429-fazic-743','AFPZ',9531);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('952-ywthq-176','DQDI',9221);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('898-wnuan-793','LFHD',933);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('302-kkeln-490','FJHG',9998);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('264-ziidg-337','XGPG',7121);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('871-wcxji-438','EWCE',8908);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('898-wnuan-793','SHQN',6568);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('075-iulit-689','FJHG',2171);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('822-sxgot-451','VMXE',244);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('101-liorh-628','DQDI',3858);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('877-jjfke-429','KLJN',9347);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('952-ywthq-176','EGWQ',4775);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('387-jyfpu-157','FBDL',7242);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('429-fazic-743','IMYC',270);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('178-mjjjm-565','RIYO',7822);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('264-ziidg-337','DQBR',520);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('495-sgiel-831','COTF',5125);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('075-iulit-689','LFHD',2513);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('302-kkeln-490','BLBR',299);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('952-ywthq-176','DZFK',3731);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('378-gotsb-518','TVNZ',1440);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('877-jjfke-429','GIVG',3079);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('429-fazic-743','MNJH',9482);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('960-ztqge-913','NQIM',4574);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('387-jyfpu-157','FZVQ',863);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('418-ylhld-122','JFVM',9671);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('871-wcxji-438','PEPL',6631);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('693-iembx-947','LGXA',7390);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('734-xfpls-018','FJHG',2234);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('302-kkeln-490','DQBR',5933);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('862-coqwz-635','FFIB',1131);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('350-zmqwa-889','FXIM',7477);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('597-yxndj-063','LKMZ',511);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('418-ylhld-122','UBMI',7332);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('378-gotsb-518','JGJE',2272);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('178-mjjjm-565','GIVG',7474);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('264-ziidg-337','EGWQ',7779);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('429-fazic-743','PHDA',305);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('594-onhzg-252','ZZYV',7848);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('693-iembx-947','XGPG',1531);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('734-xfpls-018','UABW',9163);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('822-sxgot-451','PEPL',453);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('467-lqpya-330','FGFD',4922);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('594-onhzg-252','FFIB',149);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('264-ziidg-337','BEGP',5027);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('862-coqwz-635','IHNK',7451);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('378-gotsb-518','RLOR',6486);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('950-iuvro-338','NQIM',1098);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('387-jyfpu-157','XPYQ',457);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('952-ywthq-176','ZFBF',5604);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('101-liorh-628','UBMI',7246);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('871-wcxji-438','JJUL',354);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('495-sgiel-831','FJHG',4248);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('798-nfuap-603','EZHY',3353);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('350-zmqwa-889','NLMY',5149);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('734-xfpls-018','JGJE',3784);
+INSERT INTO owns(account_id,instrument_symbol,quantity) VALUES ('178-mjjjm-565','EELY',2736);
