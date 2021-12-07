@@ -2,33 +2,33 @@
 
 CREATE TABLE "user"(
     "username" varchar(30) PRIMARY KEY,
-    "name" varchar(50)
+    "name" varchar(50) NOT NULL
 );
 
 CREATE TABLE "account"(
     "account_id" integer PRIMARY KEY,
-    "username" varchar(30), --fk
-    "cash_balance" bigint,
-    "investment_value" bigint,
+    "username" varchar(30) NOT NULL, --fk
+    "cash_balance" bigint NOT NULL,
+    "investment_value" bigint NOT NULL,
     "total_value" bigint GENERATED ALWAYS AS (cash_balance + investment_value) STORED
 );
 
 CREATE TABLE "instrument"(
     "instrument_id" integer PRIMARY KEY,
-    "quote" integer,
+    "quote" decimal NOT NULL,
     "stock_ticker" varchar(30), --fk
     "etf_ticker" varchar(30), --fk
 );
 
 CREATE TABLE "trade"(
     "trade_id" integer PRIMARY KEY,
-    "buy_or_sell" varchar(10),
-    "shares" integer,
-    "price" integer,
+    "buy_or_sell" varchar(10) NOT NULL,
+    "shares" integer NOT NULL,
+    "price" integer NOT NULL,
     "amount" bigint GENERATED ALWAYS AS(shares*price) STORED,
-    "trade_date" date,
-    "account_id" integer, --fk
-    "instrument_id" integer, --fk
+    "trade_date" date NOT NULL,
+    "account_id" integer NOT NULL, --fk
+    "instrument_id" integer NOT NULL, --fk
 );
 
 CREATE TABLE "owns"(
@@ -47,8 +47,9 @@ CREATE TABLE "stock"(
 
 CREATE TABLE "etf"(
     "etf_ticker" varchar(30) PRIMARY KEY,
+    "issuer_name" varchar(50),
     "underlying" varchar(50),
-    "manager" varchar(50)
+    "launch_date" date
 );
 
 ALTER TABLE "account" ADD CONSTRAINT "account_fk0" FOREIGN KEY("username") REFERENCES "user"("username");
