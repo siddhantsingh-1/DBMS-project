@@ -15,9 +15,7 @@ CREATE TABLE "account"(
 
 CREATE TABLE "instrument"(
     "instrument_id" integer PRIMARY KEY,
-    "quote" decimal NOT NULL,
-    "stock_ticker" varchar(30), --fk
-    "etf_ticker" varchar(30), --fk
+    "quote" decimal NOT NULL
 );
 
 CREATE TABLE "trade"(
@@ -40,6 +38,7 @@ CREATE TABLE "owns"(
 
 CREATE TABLE "stock"(
     "stock_ticker" varchar(30) PRIMARY KEY,
+    "instrument_id" integer, --fk
     "company_name" varchar(50),
     "market_cap" bigint,
     "pe_ratio" decimal
@@ -47,6 +46,7 @@ CREATE TABLE "stock"(
 
 CREATE TABLE "etf"(
     "etf_ticker" varchar(30) PRIMARY KEY,
+    "instrument_id" integer, --fk
     "issuer_name" varchar(50),
     "underlying" varchar(50),
     "launch_date" date
@@ -54,11 +54,11 @@ CREATE TABLE "etf"(
 
 ALTER TABLE "account" ADD CONSTRAINT "account_fk0" FOREIGN KEY("username") REFERENCES "user"("username");
 
-ALTER TABLE "instrument" ADD CONSTRAINT "instrument_fk0" FOREIGN KEY("stock_ticker") REFERENCES "stock"("stock_ticker");
-ALTER TABLE "instrument" ADD CONSTRAINT "instrument_fk1" FOREIGN KEY("etf_ticker") REFERENCES "etf"("etf_ticker");
-
 ALTER TABLE "trade" ADD CONSTRAINT "trade_fk0" FOREIGN KEY("account_id") REFERENCES "account"("account_id");
 ALTER TABLE "trade" ADD CONSTRAINT "trade_fk1" FOREIGN KEY("instrument_id") REFERENCES "instrument"("instrument_id");
 
 ALTER TABLE "owns" ADD CONSTRAINT "owns_fk0" FOREIGN KEY("account_id") REFERENCES "account"("account_id");
 ALTER TABLE "owns" ADD CONSTRAINT "owns_fk1" FOREIGN KEY("instrument_id") REFERENCES "instrument"("instrument_id");
+
+ALTER TABLE "stock" ADD CONSTRAINT "stock_fk0" FOREIGN KEY("instrument_id") REFERENCES "instrument"("instrument_id");
+ALTER TABLE "etf" ADD CONSTRAINT "etf_fk0" FOREIGN KEY("instrument_id") REFERENCES "instrument"("instrument_id");
